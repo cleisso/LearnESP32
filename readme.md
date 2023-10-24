@@ -6,8 +6,8 @@ Para acessar o treinamento, acessar: [learnesp32.com](https://learnesp32.com).
 ## Notas de Aula
 
 - [01 - Course Introduction](01_Course_Introduction/Course%20Introduction.md#course-introduction)
-- [02 - Environment Setup](02_Environment%20Setup/Environment%20Setup#environment-setup)
-- [03 - ]
+- [02 - Environment Setup](02_Environment%20Setup/Environment%20Setup.md#02---environment-setup)
+- [03 - ESP32 Types](03_ESP32_Types/ESP32%20Types#03---esp32-types)
 - [04 - ]
 - [05 - ]
 - [06 - ]
