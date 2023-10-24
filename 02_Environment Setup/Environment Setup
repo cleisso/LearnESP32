@@ -1,0 +1,110 @@
+# Learn ESP32
+
+## Environment Setup
+
+### Índice
+
+- [Introduction](#introduction)
+- [Installing ESP-IDF on Windows](#installing-esp-idf-on-windows)
+- [Installing ESP-IDF on Ubuntu](#installing-esp-idf-on-ubuntu)
+- [Installing and Configuring VSCode](#installing-and-configuring-vscode)
+- [Project Walkthrough](#project-walkthrough)
+- [Multiple IDF Versions](#multiple-idf-versions)
+
+### Glosário
+
+### Introduction
+
+Instalação do ESP-IDF, configuração do VSCode (ferramenta de edição gratuita disponibilizada pela Microsoft).
+
+### Installing ESP-IDF on Windows
+
+A Espressif mantém uma [página](https://docs.espressif.com/projects/esp-idf/en/latest/esp32/get-started/) onde ele disponibiliza diversas versões de download do ESP-IDF de acordo com o sistema operacional desejado. Recomenda-se realizar o download e instalá-lo antes de realizar a configuração dele no VSCode.
+
+[Link de Download para o ESP-IDF no Windows](https://dl.espressif.com/dl/esp-idf/?idf=4.4)
+
+Durante a instalação, o ESP-IDF solicitará a modificação:
+- Long Paths Enabled (habilitar a expansão de endereços de 260 caracteres para 32767);
+- A inclusão à lista de exceções no antivirus (aumentará a velocidade de compilação em até 30%).
+
+Para aplicar essas modificações, clicar em `Apply Fixes`.
+
+Recomenda-se realizar a instalação na raiz do Windows (como `C:`). Deve-se criar uma estrutura de pastas antes de realizar a instalação da ferramenta:
+
+```
+|—— C:
+|    |—— Espressif
+|        |—— esp-idf
+|        |—— tools
+```
+
+Realizar a instalação das ferramentas nas respectivas pastas.
+
+Quando a instalação for concluída, o ESP-IDF fornecerá o seu próprio Prompt de Comando com as variáveis de ambiente já configuradas automaticamente. Caso deseje testá-lo, pode-se navegar até a pasta `C:/Espressif/esp-idf/examples/get-started/hello_world` e realizar a compilação e gravação do binário no ESP32 utilizando o seguinte comando:
+
+``` bash
+idf.py build flash monitor
+```
+
+### Installing ESP-IDF on Ubuntu
+
+Pré-requisitos:
+- Instalação do Git (`apt-get install git`).
+- Instalação de todos os pré-requisitos mencionados na página:
+
+``` bash
+sudo apt-get install git wget flex bison gperf python3 python3-pip python3-venv cmake ninja-build ccache libffi-dev libssl-dev dfu-util libusb-1.0-0
+```
+
+Criar um diretório na pasta raiz chamado `esp` e realizar o download do ESP-IDF via Git:
+
+``` bash
+mkdir -p ~/esp
+cd ~/esp
+git clone --recursive https://github.com/espressif/esp-idf.git
+```
+
+Realizar a instalação da ferramenta:
+
+``` bash
+cd ~/esp/esp-idf
+./install.sh esp32
+```
+
+Configurando as variáveis de ambiente (este comando sempre deverá ser executado ao abrir o terminal):
+
+``` bash
+. $HOME/esp/esp-idf/export.sh
+```
+
+Atribuir permissão de acesso a porta `/dev/ttyUSB0` (ao utilizar esse comando, deve-se reiniciar a máquina para que as mudanças surtam efeito):
+
+``` bash
+sudo usermod -a -G dialout $USER
+```
+
+Para testar a ferramenta, copiar um dos códigos de exemplo disponibilizados pela Espressif:
+
+``` bash
+cd ~/esp
+cp -r $IDF_PATH/examples/get-started/hello_world .
+```
+
+Acessar a pasta e realizar a compilação e gravação do código:
+
+``` bash
+cd ~/esp/hello_world
+idf.py -p /dev/ttyUSB0 build flash monitor
+```
+
+**Obs:** Para verificar se realmente o ESP32 foi identificado na porta `/dev/ttyUSB0`, digitar:
+
+``` bash
+ls /dev/tty*
+```
+
+### Installing and Configuring VSCode
+
+### Project Walkthrough
+
+### Multiple IDF Versions
