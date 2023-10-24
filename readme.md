@@ -5,8 +5,8 @@ Para acessar o treinamento, acessar: [learnesp32.com](https://learnesp32.com).
 
 ## Notas de Aula
 
-- [01 - Introduction]
-- [02 - Header Component Libraries]
+- [01 - Course Introduction](01_Course_Introduction/Course%20Introduction.md#course-introduction)
+- [02 - Environment Setup](02_Environment%20Setup/Environment%20Setup#environment-setup)
 - [03 - ]
 - [04 - ]
 - [05 - ]
