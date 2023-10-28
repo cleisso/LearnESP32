@@ -33,6 +33,11 @@ Observação:
 
 - O protocolo `Thread` foi desenvolvido pelos mesmos criadores do `ZigBee`.
 
+Sites sugeridos para acessar:
+
+- [Página sobre ESP32 do Wikipedia](https://en.wikipedia.org/wiki/ESP32)
+- [Página exclusiva sobre ESP32](http://esp32.net/)
+
 ### VSCode ESP32 Target
 
 Apresenta como realizar a troca da série do ESP32 via VSCode. Recomenda-se que após a alteração do microcontrolador alvo, seja feita uma limpeza na compilação antes de compilar novamente.
